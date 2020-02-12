@@ -14,14 +14,12 @@ def add_game(name, gamestudio, genre, releasedate):
         SQL = "insert into games (name, gamestudio, genre, releasedate) values (%s, %s, %s, %s)"
         cursor.execute(SQL, (name, gamestudio, genre, releasedate))
 
-
 def get_reviews():
     with DBcm.UseDatabase(config) as cursor:
         SQL = "select id, name, gamestudio, genre, releasedate from games order by id"
         cursor.execute(SQL)
         data = cursor.fetchall()
-    return [(row[0], row[1], row[2], row[3], row[4])) for row in data ]
-
+    return [(row[0], row[1], row[2], row[3], row[4]) for row in data ]
 
  
 def add_review(numberoflikes, numberofdislikes, rank, comments):
