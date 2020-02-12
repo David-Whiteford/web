@@ -1,0 +1,14 @@
+{% extends "game.html" %}
+
+{% block the_body %}
+
+
+<p>Please eneter your user name</p>
+<form action="/processreview" method="POST">
+    <p><input type="Game Name" name="the_name"></p>
+    <p><input type="Game Review" value="review"></p>
+</form>
+
+
+
+{% endblock %}

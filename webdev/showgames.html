@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+    <h2>Show games tables</h2>
+    <ol>
+        {% for line in the_data[:10] %}  
+        <li>{{ line[0] }}  {{ line[2] }}  {{ line[1] }} </li>
+        {% endfor %}
+    </ol>
+{% endblock %}
